@@ -1,6 +1,6 @@
 .header {
     height: 100svh;
-    background: url(../img/bg.png);
+    background: url(../img/bg.png) no-repeat bottom right / cover;
     display: flex;
     flex-direction: column;
 }
@@ -69,7 +69,7 @@
 .banner__title {
     font-family: var(--ff);
     font-weight: 300;
-    font-size: 64px;
+    font-size: clamp(1.875rem, 1.046rem + 4.15vw, 4rem);
     line-height: 90%;
     color: var(--white);
 }
@@ -85,7 +85,60 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
-    color: var(--white);
+    color: var(--gray);
     max-width: 350px;
     width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .header__wrap {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+    }
+
+    .header__nav-list {
+        order: 10;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        height: auto;
+        background: none;
+    }
+
+    .header__nav {
+        background: var(--bg);
+    }
+
+    .header__wrap {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .header__nav-list {
+        order: unset;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .banner {
+        height: 100svh;
+        background: url(../img/bg.png) no-repeat bottom right / cover;
+    }
+}
+
+
+@media screen and (max-width: 568px) {
+    .banner__title{
+        text-align: center;
+    }
+    .banner__desc{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
