@@ -6,8 +6,21 @@
     text-decoration: none;
     outline: none;
     border: none;
-    font-family: "Fustat", sans-serif;
+    font-family: var(--ff);
     font-weight: 400;
+}
+
+body {
+    background: var(--bg);
+    min-width: 320px;
+    color: var(--white);
+}
+
+:root {
+    --ff: "Fustat", sans-serif;
+    --white: #f3f3f3;
+    --bg: #1c1c1c;
+    --gray: #b5b5b5;
 }
 
 .container {
@@ -17,3 +30,4 @@
     margin: 0 auto;
     padding: 0 15px;
 }
+
